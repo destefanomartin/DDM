@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.utn.basiclogin.R
 import com.utn.basiclogin.entities.User
 
+
 class loginFragment : Fragment() {
 
     lateinit var v : View
@@ -69,7 +70,6 @@ class loginFragment : Fragment() {
             } else
                 Snackbar.make(v,"Los campos no pueden estar vacios",Snackbar.LENGTH_SHORT).show()
         }
-
     }
 
 
