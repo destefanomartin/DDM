@@ -5,4 +5,59 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.companyDataShowFragment"/>
+    tools:context=".fragments.companyDataShowFragment">
+
+    <ImageView
+        android:id="@+id/imgLogoShow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameCompanyShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgLogoShow"
+        app:layout_constraintStart_toStartOf="@+id/imgLogoShow"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoShow" />
+
+    <TextView
+        android:id="@+id/locationCompanyShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/nameCompanyShow"
+        app:layout_constraintStart_toStartOf="@+id/nameCompanyShow"
+        app:layout_constraintTop_toBottomOf="@+id/nameCompanyShow" />
+
+    <TextView
+        android:id="@+id/employeesCompanyShow"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/zipCodeCompanyShow"
+        app:layout_constraintEnd_toEndOf="@+id/locationCompanyShow"
+        app:layout_constraintStart_toStartOf="@+id/locationCompanyShow"
+        app:layout_constraintTop_toBottomOf="@+id/locationCompanyShow" />
+
+    <TextView
+        android:id="@+id/zipCodeCompanyShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/employeesCompanyShow"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/employeesCompanyShow"
+        app:layout_constraintTop_toBottomOf="@+id/employeesCompanyShow" />
+</androidx.constraintlayout.widget.ConstraintLayout>

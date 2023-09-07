@@ -19,7 +19,14 @@ class companiesListFragment : Fragment() {
         fun newInstance() = companiesListFragment()
     }
 
-    private var companiesList : MutableList<Company> = mutableListOf()
+    private var companiesList : MutableList<Company> = mutableListOf(
+        Company("Apple", "Alabama", 1425, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 1200),
+        Company("Microsoft", "Alabama", 33, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 100),
+        Company("Bethesda", "Puerto Santa Maria", 232, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 12200),
+        Company("Google", "Villa Langostura", 44, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 1500),
+        Company("2K", "Mexico", 4325, "https://www.apple.com/ac/structured_data/images/knowledge_graph_logo.png?202106030101", 900)
+    )
+
     private lateinit var v: View
 
     private lateinit var rvCompanies : RecyclerView
@@ -30,29 +37,18 @@ class companiesListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_companys_list, container, false)
-
         return v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        companiesList.add(Company("Apple", "Alabama", 1425, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 1200))
-        companiesList.add(Company("Microsoft", "Alabama", 33, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 100))
-        companiesList.add(Company("Bethesda", "Puerto Santa Maria", 232, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 12200))
-        companiesList.add(Company("Google", "Villa Langostura", 44, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 1500))
-        companiesList.add(Company("2K", "Mexico", 4325, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202106030101", 900))
-
-
         rvCompanies = v.findViewById(R.id.rvCompanies)
         setupRecyclerView()
-
     }
     private fun setupRecyclerView() {
         // Creo el adapter de la lista de companies y le paso la lista de companies junto con el callback
         val companiesAdapter = CompaniesAdapter(companiesList) { company ->
             Log.d("CompaniesListFragment", "Company: ${company.name}")
-
             val action = companiesListFragmentDirections.actionCompanysListFragmentToCompanyDataShowFragment(company)
             findNavController().navigate(action)
         }
@@ -62,14 +58,15 @@ class companiesListFragment : Fragment() {
         with(rvCompanies) {
             adapter = companiesAdapter
             layoutManager = LinearLayoutManager(context)
-        }
-        rvCompanies.adapter = companiesAdapter
-        rvCompanies.layoutManager = LinearLayoutManager(context)
-        // Se puede hacer individualmente con rvCompanies. y lo que quiero
 
+        }
+        //rvCompanies.adapter = companiesAdapter
+        //rvCompanies.layoutManager = LinearLayoutManager(context)
+        // Se puede hacer individualmente con rvCompanies. y lo que quiero
+        //rvCompanies.removeAllViewsInLayout()
     }
 
     private fun onCompanyClicked(company: Company) {
-        Log.d("CompaniesListFragment", "Company: ${company.name}")
+        Log.d("CompaniesListFragment1", "Company: ${company.name}")
     }
 }
