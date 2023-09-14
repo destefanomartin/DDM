@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">PrimerParcial</string>
+    <string name="app_name">MovieApp</string>
+    <string name="Title">Titulo</string>
+    <string name="Director">Director</string>
+    <string name="Genre">Genero</string>
+    <string name="Rating">Rating</string>
+    <string name="Year">Año</string>
+    <string name="Login">Iniciar sesion</string>
+    <string name="Register">Registrarse</string>
+    <string name="RegisterMessage">¿No tienes cuenta?</string>
+    <string name="Password">Contraseña</string>
+    <string name="Email">Correo electronico</string>
+    <string name="Name">Nombre</string>
+    <string name="Age">Edad</string>
+    <string name="UploadImage">Cargar imagen</string>
+    <string name="SendData">Registrarse</string>
 </resources>

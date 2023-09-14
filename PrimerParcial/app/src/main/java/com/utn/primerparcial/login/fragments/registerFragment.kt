@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.utn.primerparcial.R
 
-class RegisterFragment : Fragment() {
+class registerFragment : Fragment() {
 
     companion object {
-        fun newInstance() = RegisterFragment()
+        fun newInstance() = registerFragment()
     }
 
     private lateinit var viewModel: RegisterViewModel

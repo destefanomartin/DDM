@@ -17,7 +17,7 @@
 
     <ImageView
         android:id="@+id/movieImage"
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="80dp"
         android:layout_margin="15dp"
         tools:srcCompat="@tools:sample/avatars"

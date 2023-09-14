@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.fragments.RegisterFragment">
+    tools:context=".login.fragments.registerFragment">
 
     <EditText
         android:id="@+id/registerPassword"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/Password"
         android:inputType="textPassword"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/registerAge"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Mail"
+        android:hint="@string/Email"
         android:inputType="textEmailAddress"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/registerPassword"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="@string/Name"
         android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/registerEmail"
@@ -48,11 +48,11 @@
 
     <EditText
         android:id="@+id/registerAge"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:ems="10"
-        android:hint="Edad"
+        android:hint="@string/Age"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/imageButton"
@@ -64,17 +64,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="Button"
+        android:text="@string/UploadImage"
+        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toTopOf="@id/sendData"
         app:layout_constraintEnd_toEndOf="@id/registerAge"
-        app:layout_constraintStart_toStartOf="@id/registerAge" />
+        app:layout_constraintStart_toStartOf="@id/registerAge"
+        app:icon="@drawable/plusbttn"/>
 
     <Button
         android:id="@+id/sendData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="Button"
+        android:backgroundTint="@color/black"
+        android:text="@string/SendData"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/imageButton"
         app:layout_constraintStart_toStartOf="@id/imageButton" />

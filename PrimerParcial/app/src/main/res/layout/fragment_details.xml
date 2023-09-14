@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".movies.fragments.DetailsFragment" >
+    android:layout_height="wrap_content"
+    tools:context=".movies.fragments.detailsFragment" >
 
     <ImageView
         android:id="@+id/movieImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="400dp"
         tools:src="@tools:sample/avatars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="20dp"/>
+        android:layout_margin="20dp"
+        />
 
     <TextView
-        android:id="@+id/movieTitle"
+        android:id="@+id/movieTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -28,41 +29,41 @@
         />
 
     <TextView
-        android:id="@+id/movieGenre"
+        android:id="@+id/movieGenreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@id/movieImage"
         app:layout_constraintEnd_toEndOf="@id/movieImage"
-        app:layout_constraintTop_toBottomOf="@id/movieTitle"/>
+        app:layout_constraintTop_toBottomOf="@id/movieTitleText"/>
 
     <TextView
-        android:id="@+id/movieYear"
+        android:id="@+id/movieYearText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@id/movieGenre"
-        app:layout_constraintStart_toStartOf="@id/movieGenre"
-        app:layout_constraintTop_toBottomOf="@id/movieGenre" />
+        app:layout_constraintEnd_toEndOf="@id/movieGenreText"
+        app:layout_constraintStart_toStartOf="@id/movieGenreText"
+        app:layout_constraintTop_toBottomOf="@id/movieGenreText" />
 
     <TextView
-        android:id="@+id/movieDirector"
+        android:id="@+id/movieDirectorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@id/movieYear"
-        app:layout_constraintEnd_toEndOf="@id/movieYear"
-        app:layout_constraintTop_toBottomOf="@id/movieYear"
+        app:layout_constraintStart_toStartOf="@id/movieYearText"
+        app:layout_constraintEnd_toEndOf="@id/movieYearText"
+        app:layout_constraintTop_toBottomOf="@id/movieYearText"
         />
 
     <TextView
-        android:id="@+id/movieRating"
+        android:id="@+id/movieRatingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@id/movieDirector"
-        app:layout_constraintStart_toStartOf="@id/movieDirector"
-        app:layout_constraintTop_toBottomOf="@id/movieDirector"
+        app:layout_constraintEnd_toEndOf="@id/movieDirectorText"
+        app:layout_constraintStart_toStartOf="@id/movieDirectorText"
+        app:layout_constraintTop_toBottomOf="@id/movieDirectorText"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
