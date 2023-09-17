@@ -98,6 +98,32 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieImageLink"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:hint="@string/UploadImage"
+        app:layout_constraintStart_toStartOf="@id/inputMovieRating"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieRating"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieYear"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieImageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addFilm"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieYear"
+        app:layout_constraintStart_toStartOf="@id/inputMovieRating"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieRating"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

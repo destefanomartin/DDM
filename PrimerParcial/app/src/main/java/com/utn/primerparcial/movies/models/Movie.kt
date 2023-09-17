@@ -27,10 +27,10 @@ data class Movie(
     var year: Int,
 
     @ColumnInfo(name = "rating")
-    var rating: Int,
+    var rating: Double,
 
     @ColumnInfo(name = "image")
     var image: String,
 
-) : Parcelable
+    ) : Parcelable
 

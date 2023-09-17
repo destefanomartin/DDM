@@ -1,14 +1,16 @@
 package com.utn.primerparcial.movies.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import com.utn.primerparcial.R
+import com.utn.primerparcial.movies.database.AppDatabase
+import com.utn.primerparcial.movies.database.MovieDao
+import com.utn.primerparcial.movies.models.Movie
 
 class CreateMovieFragment : Fragment() {
 
@@ -16,13 +18,18 @@ class CreateMovieFragment : Fragment() {
         fun newInstance() = CreateMovieFragment()
     }
 
+    private var moviedb : AppDatabase? = null
+    private var MovieDao : MovieDao? = null
+
     lateinit var v : View
     lateinit var title : TextInputEditText
     lateinit var director : TextInputEditText
     lateinit var genre : TextInputEditText
     lateinit var year : TextInputEditText
     lateinit var rating : TextInputEditText
+    lateinit var image : TextInputEditText
 
+    lateinit var insertButton : Button
 
 
 
@@ -32,7 +39,8 @@ class CreateMovieFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_create_movie, container, false)
+        v = inflater.inflate(R.layout.fragment_create_movie, container, false)
+        return v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,6 +51,25 @@ class CreateMovieFragment : Fragment() {
         year =  v.findViewById(R.id.inputMovieYearEditText)
         director = v.findViewById(R.id.inputMovieDirectorEditText)
         rating = v.findViewById(R.id.inputMovieRatingEditText)
+        insertButton = v.findViewById(R.id.insertButton)
+        image = v.findViewById(R.id.inputMovieImageEditText)
+
+
+
+        insertButton.setOnClickListener {
+            moviedb = AppDatabase.getInstance(v.context)
+            MovieDao = moviedb?.movieDao()
+
+            MovieDao?.insertMovie(
+                Movie(0,
+                    title.text.toString(),
+                    director.text.toString(),
+                    genre.text.toString(),
+                    year.text.toString().toInt(),
+                    rating.text.toString().toDouble(),
+                    image.text.toString()
+            ))
+        }
 
 
 

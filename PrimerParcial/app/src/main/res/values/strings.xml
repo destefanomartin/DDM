@@ -14,4 +14,6 @@
     <string name="Age">Edad</string>
     <string name="UploadImage">Cargar imagen</string>
     <string name="SendData">Registrarse</string>
+    <string name="addFilm">Añadir pelicula</string>
+
 </resources>
