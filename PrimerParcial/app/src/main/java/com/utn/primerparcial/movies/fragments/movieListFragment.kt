@@ -37,10 +37,7 @@ class movieListFragment : Fragment() {
         addButton = v.findViewById(R.id.addButton)
         rvMovies = v.findViewById(R.id.rvMovies)
 
-        addButton.setOnClickListener {
-            val action = movieListFragmentDirections.actionMovieListFragmentToCreateMovieFragment()
-            findNavController().navigate(action)
-        }
+
         return v
     }
 
@@ -53,6 +50,11 @@ class movieListFragment : Fragment() {
         MovieDao?.fetchAllMovies()
 
         setupRecyclerView()
+
+        addButton.setOnClickListener {
+            val action = movieListFragmentDirections.actionMovieListFragmentToCreateMovieFragment()
+            findNavController().navigate(action)
+        }
 
     }
 
