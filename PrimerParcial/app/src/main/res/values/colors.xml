@@ -21,4 +21,6 @@
     <color name="lightBrown">#FFCD853F</color>
     <color name="lightRed">#FFFF6347</color>
     <color name="lightBlack">#FF696969</color>
+    <color name="enabled_color">#b85151</color>
+    <color name="disabled_color">#000000</color>
 </resources>

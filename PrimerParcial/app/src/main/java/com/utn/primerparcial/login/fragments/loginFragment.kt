@@ -28,7 +28,7 @@ class loginFragment : Fragment() {
     lateinit var btnRegister: TextView
     var baseUsuarios : MutableList<User> = ArrayList<User>(
         listOf(
-            User("Juan", "1234", "juan@gmail.com", "https://i.pinimg.com/originals/0f/6a/9a/0f6a9a0a1b0a0e1a0e1a0e1a0e1a0e1a.jpg", 20),
+            User("Juan", "2", "1", "https://i.pinimg.com/originals/0f/6a/9a/0f6a9a0a1b0a0e1a0e1a0e1a0e1a0e1a.jpg", 20),
     ))
     // TODO : implementar boton de recuperacion de contraseña
     lateinit var registerText: TextView
