@@ -17,7 +17,6 @@ class userProfileFragment : Fragment() {
     private lateinit var name : TextView
     private lateinit var mail : TextView
     private lateinit var age : TextView
-    private lateinit var image : ImageView
     companion object {
         fun newInstance() = userProfileFragment()
     }
@@ -40,7 +39,6 @@ class userProfileFragment : Fragment() {
         name = v.findViewById(R.id.userNameTextView)
         mail = v.findViewById(R.id.emailTextView)
         age = v.findViewById(R.id.ageTextView)
-        image = v.findViewById(R.id.profileImageView)
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
