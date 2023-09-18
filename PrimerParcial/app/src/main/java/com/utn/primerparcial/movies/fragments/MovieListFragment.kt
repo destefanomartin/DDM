@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,18 +15,18 @@ import com.utn.primerparcial.movies.adapters.MoviesAdapter
 import com.utn.primerparcial.movies.database.AppDatabase
 import com.utn.primerparcial.movies.database.MovieDao
 
-class movieListFragment : Fragment() {
+class MovieListFragment : Fragment() {
 
     lateinit var v : View
     companion object {
-        fun newInstance() = movieListFragment()
+        fun newInstance() = MovieListFragment()
     }
 
     private var moviedb : AppDatabase? = null
     private var MovieDao : MovieDao? = null
     private lateinit var rvMovies: RecyclerView
     private lateinit var viewModel: MovieListViewModel
-    private lateinit var addButton : FloatingActionButton
+    private lateinit var addButton : Button
 
 
     override fun onCreateView(
@@ -52,16 +53,16 @@ class movieListFragment : Fragment() {
         setupRecyclerView()
 
         addButton.setOnClickListener {
-            val action = movieListFragmentDirections.actionMovieListFragmentToCreateMovieFragment()
+            val action = MovieListFragmentDirections.actionMovieListFragmentToCreateMovieFragment()
             findNavController().navigate(action)
         }
 
     }
 
     private fun setupRecyclerView() {
-        val allMovies = moviedb?.movieDao()?.getAllMovies()
+        val allMovies = moviedb!!.movieDao()!!.getAllMovies()
         val moviesAdapter = MoviesAdapter(allMovies) {movie ->
-        val action = movieListFragmentDirections.actionMovieListFragmentToDetailsFragment(movie)
+        val action = MovieListFragmentDirections.actionMovieListFragmentToDetailsFragment(movie)
         findNavController().navigate(action)
         }
         with(rvMovies) {

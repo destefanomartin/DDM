@@ -17,4 +17,5 @@
     <string name="addFilm">Añadir pelicula</string>
     <string name="Edit">Editar</string>
     <string name="Save">Guardar</string>
+    <string name="add_movie">Añadir pelicula</string>
 </resources>

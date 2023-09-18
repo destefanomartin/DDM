@@ -18,9 +18,6 @@ class CreateMovieFragment : Fragment() {
         fun newInstance() = CreateMovieFragment()
     }
 
-    private var moviedb : AppDatabase? = null
-    private var MovieDao : MovieDao? = null
-
     lateinit var v : View
     lateinit var title : TextInputEditText
     lateinit var director : TextInputEditText
@@ -57,10 +54,7 @@ class CreateMovieFragment : Fragment() {
 
 
         insertButton.setOnClickListener {
-            moviedb = AppDatabase.getInstance(v.context)
-            MovieDao = moviedb?.movieDao()
-
-            MovieDao?.insertMovie(
+            AppDatabase.getInstance(requireContext())?.movieDao()?.insertMovie(
                 Movie(0,
                     title.text.toString(),
                     director.text.toString(),
@@ -68,7 +62,9 @@ class CreateMovieFragment : Fragment() {
                     year.text.toString().toInt(),
                     rating.text.toString().toDouble(),
                     image.text.toString()
-            ))
+                )
+            )
+            requireActivity().onBackPressed()
         }
 
 

@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.utn.primerparcial.movies.database.AppDatabase
+import com.utn.primerparcial.movies.database.MovieDao
 
 class NavActivity : AppCompatActivity() {
 
@@ -18,5 +20,13 @@ class NavActivity : AppCompatActivity() {
         bottomNavView = findViewById(R.id.bottomBar)
 
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
+
+        setupDatabasePreload()
+    }
+
+    private fun setupDatabasePreload() {
+        AppDatabase.getInstance(this)
+            ?.movieDao()
+            ?.fetchAllMovies()
     }
 }

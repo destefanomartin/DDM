@@ -20,7 +20,7 @@
         tools:layout="@layout/fragment_user_profile" />
     <fragment
         android:id="@+id/movieListFragment"
-        android:name="com.utn.primerparcial.movies.fragments.movieListFragment"
+        android:name="com.utn.primerparcial.movies.fragments.MovieListFragment"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list" >
         <action

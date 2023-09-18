@@ -27,6 +27,7 @@
         android:maxHeight="56dp"
         android:minHeight="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundTint="@color/black"
         app:menu="@menu/bottom_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
