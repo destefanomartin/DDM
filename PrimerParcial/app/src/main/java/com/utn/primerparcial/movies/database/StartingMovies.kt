@@ -27,10 +27,10 @@ class StartingMovies (private val context: Context) : RoomDatabase.Callback() {
      */
     private fun fillWithStartingMovies(context: Context) {
         val movies = listOf(
-            Movie(1, "The Godfather", "Francis Ford Coppola", "Drama", 1972, 9.0, "https://i.pinimg.com/originals/c8/51/cd/c851cd6600ed7536f270db9e14319e8f.jpg"),
-            Movie(2, "The Godfather: Part II", "Francis Ford Coppola", "Drama", 1974, 9.3, "https://i.pinimg.com/originals/6a/6e/9a/6a6e9a1b6b0b0b0b0b0b0b0b0b0b0b0b.jpg"),
-            Movie(3, "The Batman", "Matt Reeves", "Action", 2022, 4.3, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzTtJdgjRlsqyV-GXfD9HSnqBi6O8hjyqqQHqYYos&s"),
-            Movie(4, "The Dark Knight", "Christopher Nolan", "Action", 2008, 5.6, "https://i.pinimg.com/originals/6a/6e/9a/6a6e9a1b6b0b0b0b0b0b0b0b0b0b0b0b.jpg"),
+            Movie(0, "The Godfather", "Francis Ford Coppola", "Drama", 1972, 9.0, "https://i.pinimg.com/originals/c8/51/cd/c851cd6600ed7536f270db9e14319e8f.jpg"),
+            Movie(0, "The Godfather: Part II", "Francis Ford Coppola", "Drama", 1974, 9.3, "https://i.pinimg.com/originals/6a/6e/9a/6a6e9a1b6b0b0b0b0b0b0b0b0b0b0b0b.jpg"),
+            Movie(0, "The Batman", "Matt Reeves", "Action", 2022, 4.3, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzTtJdgjRlsqyV-GXfD9HSnqBi6O8hjyqqQHqYYos&s"),
+            Movie(0, "The Dark Knight", "Christopher Nolan", "Action", 2008, 5.6, "https://i.pinimg.com/originals/6a/6e/9a/6a6e9a1b6b0b0b0b0b0b0b0b0b0b0b0b.jpg"),
             )
         val dao = AppDatabase.getInstance(context)?.movieDao()
 
