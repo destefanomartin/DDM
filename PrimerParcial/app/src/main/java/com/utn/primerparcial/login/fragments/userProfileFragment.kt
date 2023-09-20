@@ -1,7 +1,9 @@
 package com.utn.primerparcial.login.fragments
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,8 +23,6 @@ class userProfileFragment : Fragment() {
         fun newInstance() = userProfileFragment()
     }
 
-    private lateinit var viewModel: UserProfileViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,11 +39,11 @@ class userProfileFragment : Fragment() {
         name = v.findViewById(R.id.userNameTextView)
         mail = v.findViewById(R.id.emailTextView)
         age = v.findViewById(R.id.ageTextView)
+
+        name.text = requireActivity().getSharedPreferences("my_loggedUser",Context.MODE_PRIVATE).getString("loggedUserName","default")!!
+        mail.text = requireActivity().getSharedPreferences("my_loggedUser",Context.MODE_PRIVATE)?.getString("loggedUserMail","default")!!
+        age.text = requireActivity().getSharedPreferences("my_loggedUser",Context.MODE_PRIVATE)?.getInt("loggedUserAge",0)!!.toString()
     }
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(UserProfileViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 }

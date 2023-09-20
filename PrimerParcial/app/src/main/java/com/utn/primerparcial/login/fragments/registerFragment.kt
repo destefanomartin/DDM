@@ -10,8 +10,11 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.ImageView
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.utn.primerparcial.R
+import com.utn.primerparcial.login.models.User
+import com.utn.primerparcial.movies.database.AppDatabase
 
 class registerFragment : Fragment() {
 
@@ -45,10 +48,31 @@ class registerFragment : Fragment() {
         return v
     }
 
+    override fun onStart() {
+        super.onStart()
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        registerButton.setOnClickListener {
+            if(registerPassword.text.toString().isNotEmpty() && registerMail.text.toString().isNotEmpty() && registerName.text.toString().isNotEmpty() && registerAge.text.toString().isNotEmpty()){
+            AppDatabase.getInstance(requireContext())?.userDao()?.insertUser(
+                User(0,
+                    registerName.text.toString(),
+                    registerMail.text.toString(),
+                    registerPassword.text.toString(),
+                    registerAge.text.toString().toInt()
+
+                )
+
+            )
+            }else{
+                Snackbar.make(v, "Por favor, complete todos los campos", Snackbar.LENGTH_LONG).show()
+            }
+            requireActivity().onBackPressed()
+        }
 
     }
 

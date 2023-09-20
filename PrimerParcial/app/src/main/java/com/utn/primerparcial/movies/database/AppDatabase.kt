@@ -4,13 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.utn.primerparcial.login.database.StartingUsers
+import com.utn.primerparcial.login.database.UserDao
+import com.utn.primerparcial.login.models.User
 import com.utn.primerparcial.movies.models.Movie
 
-@Database(entities = [Movie::class], version = 2, exportSchema = false)
+@Database(entities = [Movie::class, User::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun movieDao(): MovieDao
-
+    abstract fun userDao(): UserDao
     companion object {
         private var INSTANCE: AppDatabase? = null
 
@@ -32,6 +35,7 @@ abstract class AppDatabase : RoomDatabase() {
                         "myDB"
                     )
                         .addCallback(StartingMovies(context))
+                        .addCallback(StartingUsers(context))
                         .fallbackToDestructiveMigration()
                         .allowMainThreadQueries() // No es recomendable que se ejecute en el mainthread
                         .build()

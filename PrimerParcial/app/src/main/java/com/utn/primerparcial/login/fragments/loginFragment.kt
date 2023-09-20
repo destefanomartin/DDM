@@ -1,5 +1,6 @@
 package com.utn.primerparcial.login.fragments
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.utn.primerparcial.R
 import com.utn.primerparcial.login.models.User
+import com.utn.primerparcial.movies.database.AppDatabase
 
 class loginFragment : Fragment() {
 
@@ -26,10 +28,7 @@ class loginFragment : Fragment() {
     lateinit var inputPassword: TextInputEditText
     lateinit var btnLogin: Button
     lateinit var btnRegister: TextView
-    var baseUsuarios : MutableList<User> = ArrayList<User>(
-        listOf(
-            User("Juan", "2", "1", 20),
-    ))
+
     // TODO : implementar boton de recuperacion de contraseña
     lateinit var registerText: TextView
 
@@ -49,7 +48,6 @@ class loginFragment : Fragment() {
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registerText = v.findViewById(R.id.registerText)
@@ -59,6 +57,8 @@ class loginFragment : Fragment() {
         btnLogin = v.findViewById(R.id.btnLogin)
         btnRegister = v.findViewById(R.id.registerButton)
 
+        AppDatabase.getInstance(v.context)!!.userDao()!!.fetchAllUsers()
+        val baseUsuarios = AppDatabase.getInstance(v.context)!!.userDao()!!.getAllUsers()
 
 
 
@@ -75,15 +75,24 @@ class loginFragment : Fragment() {
 
 
         btnLogin.setOnClickListener {
+
             val userEmail: String = inputMail.text.toString()
             Log.d("Mail = ", userEmail)
             val userPassword: String = inputPassword.text.toString()
             if (userEmail.isNotEmpty() and userPassword.isNotEmpty()) {
-                val userIndex = baseUsuarios.indexOfFirst {
-                    it.email == userEmail }
+                val userIndex = baseUsuarios!!.indexOfFirst {
+                    it!!.email == userEmail }
                 if (userIndex != -1) {
-                    if (userPassword == baseUsuarios[userIndex].password) {
-                        var userLogged = baseUsuarios[userIndex]
+                    if (userPassword == baseUsuarios!![userIndex]!!.password) {
+                        val userLogged = baseUsuarios[userIndex]
+                        val sharedPref = requireActivity().getSharedPreferences("my_loggedUser", Context.MODE_PRIVATE)
+                        val editor = sharedPref.edit()
+                        editor.putInt("loggedUserId", userLogged!!.id)
+                        Log.d("loggedUserId", userLogged!!.id.toString())
+                        editor.putString("loggedUserName", userLogged!!.name)
+                        editor.putString("loggedUserMail", userLogged!!.email)
+                        editor.putInt("loggedUserAge", userLogged!!.age)
+                        editor.apply()
                         val action = loginFragmentDirections.actionLoginFragmentToNavActivity()
                         findNavController().navigate(action)
                     } else
