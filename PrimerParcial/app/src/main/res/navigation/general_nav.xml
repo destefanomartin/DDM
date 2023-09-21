@@ -17,7 +17,14 @@
         android:id="@+id/userProfileFragment"
         android:name="com.utn.primerparcial.login.fragments.userProfileFragment"
         android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" />
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_main_navgraph"
+            app:destination="@id/main_navgraph" />
+    </fragment>
     <fragment
         android:id="@+id/movieListFragment"
         android:name="com.utn.primerparcial.movies.fragments.MovieListFragment"
@@ -35,4 +42,10 @@
         android:name="com.utn.primerparcial.movies.fragments.CreateMovieFragment"
         android:label="fragment_create_movie"
         tools:layout="@layout/fragment_create_movie" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.utn.primerparcial.SettingsActivity"
+        android:label="activity_settings"
+        tools:layout="@layout/activity_settings" />
+    <include app:graph="@navigation/main_navgraph" />
 </navigation>

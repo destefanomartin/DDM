@@ -28,8 +28,8 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
      */
     private fun fillWithStartingUsers(context: Context) {
         val users = listOf(
-            User(1,"Martin Destefano", "1234", "martin@gmail.com", 23),
-            User(2,"Franco Torres", "2222", "franco@gmail.com", 18)
+            User(1,"Martin Destefano", "martin@gmail.com", "2222", 23),
+            User(2,"Franco Torres", "franco@gmail.com", "2222", 18)
         )
         val dao = AppDatabase.getInstance(context)?.userDao()
 

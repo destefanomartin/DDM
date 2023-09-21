@@ -13,41 +13,72 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/ageTextView"
-        app:layout_constraintEnd_toEndOf="@id/userNameTextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/userNameTextView"
-        app:layout_constraintTop_toBottomOf="@id/userNameTextView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userNameTextView"/>
 
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@id/profileImageView"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@id/profileImageView"
-        app:layout_constraintTop_toBottomOf="@id/profileImageView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/ageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/emailTextView"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/emailTextView"
         app:layout_constraintTop_toBottomOf="@id/emailTextView" />
 
-    <ImageView
-        android:id="@+id/profileImageView"
+    <TextView
+        android:id="@+id/favMovieTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@id/ageTextView"
+        app:layout_constraintEnd_toEndOf="@id/ageTextView"
+        app:layout_constraintTop_toBottomOf="@id/ageTextView"
+         />
+
+    <TextView
+        android:id="@+id/userIdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@id/favMovieTextView"
+        app:layout_constraintEnd_toEndOf="@id/favMovieTextView"
+        app:layout_constraintTop_toBottomOf="@id/favMovieTextView"
+        app:layout_constraintBottom_toTopOf="@id/settingsButton"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:backgroundTint="@color/black"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        app:icon="@drawable/logout"
+        app:iconTint="@color/white"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="20dp"
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart  ="4dp"
+        android:layout_marginBottom="64dp"
+        app:srcCompat="@drawable/settings"
+        app:tint="@color/white"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
