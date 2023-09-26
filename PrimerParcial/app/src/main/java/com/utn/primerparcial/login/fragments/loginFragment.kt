@@ -2,6 +2,7 @@ package com.utn.primerparcial.login.fragments
 
 import android.content.Context
 import android.graphics.Color
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -23,12 +25,11 @@ class loginFragment : Fragment() {
 
 
     lateinit var v: View
-    lateinit var welcomeLabel: TextView
     lateinit var inputMail: TextInputEditText
     lateinit var inputPassword: TextInputEditText
     lateinit var btnLogin: Button
     lateinit var btnRegister: TextView
-
+    lateinit var imageLogo : ImageView
     // TODO : implementar boton de recuperacion de contraseña
     lateinit var registerText: TextView
 
@@ -36,7 +37,6 @@ class loginFragment : Fragment() {
         fun newInstance() = loginFragment()
     }
 
-    private lateinit var viewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,19 +51,17 @@ class loginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registerText = v.findViewById(R.id.registerText)
-        welcomeLabel = v.findViewById(R.id.welcomeText)
         inputMail = v.findViewById(R.id.inputMailEditText)
         inputPassword = v.findViewById(R.id.inputPasswordEditText)
         btnLogin = v.findViewById(R.id.btnLogin)
         btnRegister = v.findViewById(R.id.registerButton)
-
+        imageLogo = v.findViewById(R.id.imageLogo)
         AppDatabase.getInstance(v.context)!!.userDao()!!.fetchAllUsers()
         val baseUsuarios = AppDatabase.getInstance(v.context)!!.userDao()!!.getAllUsers()
 
 
 
 
-        welcomeLabel.text = "Bienvenido a MovieApp"
         btnRegister.setOnClickListener {
             val action = loginFragmentDirections.actionLoginFragmentToRegisterFragment()
             findNavController().navigate(action)
@@ -92,7 +90,10 @@ class loginFragment : Fragment() {
                         editor.putString("loggedUserName", userLogged!!.name)
                         editor.putString("loggedUserMail", userLogged!!.email)
                         editor.putInt("loggedUserAge", userLogged!!.age)
+                        editor.putString("loggedUserFavMovie", userLogged!!.favMovie)
                         editor.apply()
+                        inputMail.setText("")
+                        inputPassword.setText("")
                         val action = loginFragmentDirections.actionLoginFragmentToNavActivity()
                         findNavController().navigate(action)
                     } else

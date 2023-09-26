@@ -7,14 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".movies.fragments.CreateMovieFragment">
 
+
+    <TextView
+        android:id="@+id/addFilmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addYourFilm"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMovieTitle"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/addFilmTextView">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -27,8 +41,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMovieDirector"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/Director"
         app:layout_constraintStart_toStartOf="@id/inputMovieTitle"
         app:layout_constraintEnd_toEndOf="@id/inputMovieTitle"
@@ -46,8 +63,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMovieGenre"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/Genre"
         app:layout_constraintStart_toStartOf="@id/inputMovieDirector"
         app:layout_constraintEnd_toEndOf="@id/inputMovieDirector"
@@ -65,9 +85,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMovieRating"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
         android:hint="@string/Rating"
         app:layout_constraintEnd_toStartOf="@+id/inputMovieYear"
         app:layout_constraintStart_toStartOf="@id/inputMovieGenre"
@@ -82,8 +103,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMovieYear"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
         android:hint="@string/Year"
         app:layout_constraintStart_toEndOf="@id/inputMovieRating"
         app:layout_constraintTop_toBottomOf="@id/inputMovieGenre"
@@ -100,8 +123,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMovieImageLink"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/UploadImage"
         app:layout_constraintStart_toStartOf="@id/inputMovieRating"
         app:layout_constraintTop_toBottomOf="@id/inputMovieRating"
@@ -117,13 +143,17 @@
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/insertButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:text="@string/addFilm"
         app:layout_constraintEnd_toEndOf="@id/inputMovieYear"
         app:layout_constraintStart_toStartOf="@id/inputMovieRating"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputMovieRating"/>
+        app:layout_constraintTop_toBottomOf="@id/inputMovieRating" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

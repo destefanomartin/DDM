@@ -22,15 +22,13 @@ class registerFragment : Fragment() {
         fun newInstance() = registerFragment()
     }
 
-    private lateinit var viewModel: RegisterViewModel
     private lateinit var v : View
     private lateinit var registerPassword : TextInputEditText
     private lateinit var registerMail : TextInputEditText
     private lateinit var registerName : TextInputEditText
     private lateinit var registerAge : TextInputEditText
     private lateinit var registerButton : Button
-    private lateinit var gifImage : ImageView
-
+    private lateinit var favMovie : TextInputEditText
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,16 +40,11 @@ class registerFragment : Fragment() {
         registerName = v.findViewById(R.id.registerNameEditText)
         registerAge = v.findViewById(R.id.registerAgeEditText)
         registerButton = v.findViewById(R.id.sendData)
-        gifImage = v.findViewById(R.id.funnyImage)
-
+        favMovie = v.findViewById(R.id.registerFavMovieEditText)
 
         return v
     }
 
-    override fun onStart() {
-        super.onStart()
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -63,7 +56,8 @@ class registerFragment : Fragment() {
                     registerName.text.toString(),
                     registerMail.text.toString(),
                     registerPassword.text.toString(),
-                    registerAge.text.toString().toInt()
+                    registerAge.text.toString().toInt(),
+                    favMovie.text.toString()
 
                 )
 
@@ -76,10 +70,5 @@ class registerFragment : Fragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }

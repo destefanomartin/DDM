@@ -11,9 +11,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.utn.primerparcial.MainActivity
+import com.utn.primerparcial.NavActivity
 import com.utn.primerparcial.R
+import com.utn.primerparcial.login.LoginActivity
 
 class userProfileFragment : Fragment() {
 
@@ -58,6 +62,12 @@ class userProfileFragment : Fragment() {
             ?.getString("loggedUserMail", "default")!!
         age.text = requireActivity().getSharedPreferences("my_loggedUser", Context.MODE_PRIVATE)
             ?.getInt("loggedUserAge", 0)!!.toString()
+        if(!PreferenceManager.getDefaultSharedPreferences(requireContext()).getBoolean("userID", false)){
+            userId.text = requireActivity().getSharedPreferences("my_loggedUser", Context.MODE_PRIVATE)
+                ?.getInt("loggedUserId", 0)!!.toString() }
+        else userId.text = ""
+        favMovie.text = requireActivity().getSharedPreferences("my_loggedUser", Context.MODE_PRIVATE)
+            ?.getString("loggedUserFavMovie", "default")!!
 
 
         settingsButton.setOnClickListener {
@@ -75,6 +85,10 @@ class userProfileFragment : Fragment() {
         val editor = sharedPref.edit()
         editor.clear()
         editor.apply()
+        requireActivity().finish()
+        MainActivity().finish()
+        LoginActivity().finish()
+
         val action = userProfileFragmentDirections.actionUserProfileFragmentToMainNavgraph()
         findNavController().navigate(action)
     }

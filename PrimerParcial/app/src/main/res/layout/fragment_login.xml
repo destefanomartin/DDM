@@ -7,16 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".login.fragments.loginFragment">
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/app_name"
-        android:textSize="34sp"
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logoapp"
+        android:contentDescription="Logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
     <Button
         android:id="@+id/btnLogin"
@@ -44,14 +46,15 @@
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="60dp"
+        android:clickable="true"
         android:text="@string/Register"
         android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/registerText"
         app:layout_constraintStart_toStartOf="@id/registerText"
-        app:layout_constraintTop_toBottomOf="@id/registerText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:clickable="true"/>
+        app:layout_constraintTop_toBottomOf="@id/registerText" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMail"
@@ -59,9 +62,9 @@
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
         android:hint="@string/Email"
-        app:layout_constraintEnd_toEndOf="@id/welcomeText"
-        app:layout_constraintStart_toStartOf="@id/welcomeText"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText">
+        app:layout_constraintEnd_toEndOf="@id/imageLogo"
+        app:layout_constraintStart_toStartOf="@id/imageLogo"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputMailEditText"
             android:layout_width="match_parent"
@@ -85,5 +88,7 @@
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

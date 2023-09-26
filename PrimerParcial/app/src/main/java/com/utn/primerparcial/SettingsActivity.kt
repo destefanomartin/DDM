@@ -1,10 +1,13 @@
 package com.utn.primerparcial
 
+import android.content.SharedPreferences
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import java.util.Locale
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)

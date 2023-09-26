@@ -23,7 +23,9 @@ class User (
     var password : String,
 
     @ColumnInfo(name = "age")
-    var age : Int
+    var age : Int,
 
+    @ColumnInfo(name = "favMovie")
+    var favMovie : String
 
 ) : Parcelable

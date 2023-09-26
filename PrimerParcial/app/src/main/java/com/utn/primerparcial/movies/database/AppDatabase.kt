@@ -37,7 +37,7 @@ abstract class AppDatabase : RoomDatabase() {
                         .addCallback(StartingMovies(context))
                         .addCallback(StartingUsers(context))
                         .fallbackToDestructiveMigration()
-                        .allowMainThreadQueries() // No es recomendable que se ejecute en el mainthread
+                        .allowMainThreadQueries()
                         .build()
                 }
             }

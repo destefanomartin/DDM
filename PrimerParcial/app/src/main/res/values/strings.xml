@@ -36,4 +36,18 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="RatingForDetails">Calificacion:</string>
+    <string name="DirectorForDetails">Director:</string>
+    <string name="GenreForDetails">Genero:</string>
+    <string name="YearForDetails">Año:</string>
+    <string name="TitleForDetails">Titulo:</string>
+    <string name="FavMovie">Pelicula Favorita</string>
+    <string name="RegisterTitle">Crear una cuenta</string>
+    <string name="language_title">Idioma</string>
+    <string name="select_language">Selecciona un idioma</string>
+    <string name="set_theme">Selecciona una apariencia</string>
+    <string name="theme">Apariencia</string>
+    <string name="addYourFilm">¡Añade tu pelicula!</string>
+    <string name="userID_header">Perfil</string>
+    <string name="userID_title">Ocultar la ID de usuario</string>
 </resources>

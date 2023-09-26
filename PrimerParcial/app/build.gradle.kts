@@ -59,4 +59,5 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
     // Glide - image loader
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.fragment:fragment-ktx:1.2.5")
 }

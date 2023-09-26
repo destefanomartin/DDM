@@ -28,10 +28,6 @@ class CreateMovieFragment : Fragment() {
 
     lateinit var insertButton : Button
 
-
-
-    private lateinit var viewModel: CreateMovieViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

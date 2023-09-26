@@ -6,17 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login.fragments.registerFragment">
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:src="@drawable/circle"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/RegisterTitle"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/registerName"
+        app:layout_constraintStart_toStartOf="@id/registerName"
+        app:layout_constraintBottom_toBottomOf="@id/circle"
+        android:layout_marginBottom="100dp"
+
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/registerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:hint="@string/Name"
         app:startIconDrawable="@drawable/personicon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/circle">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registerNameEditText"
             android:layout_width="match_parent"
@@ -51,11 +76,13 @@
         app:startIconDrawable="@drawable/lockicon"
         app:layout_constraintEnd_toEndOf="@id/registerMail"
         app:layout_constraintStart_toStartOf="@id/registerMail"
-        app:layout_constraintTop_toBottomOf="@id/registerMail">
+        app:layout_constraintTop_toBottomOf="@id/registerMail"
+        app:endIconMode="password_toggle">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registerPasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,20 +105,27 @@
         android:id="@+id/sendData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/black"
         android:text="@string/SendData"
+        app:layout_constraintEnd_toEndOf="@id/registerFavMovie"
+        app:layout_constraintStart_toStartOf="@id/registerFavMovie"
+        app:layout_constraintTop_toBottomOf="@id/registerFavMovie" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/registerFavMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/FavMovie"
         app:layout_constraintEnd_toEndOf="@id/registerAge"
         app:layout_constraintStart_toStartOf="@id/registerAge"
-        app:layout_constraintTop_toBottomOf="@id/registerAge" />
+        app:layout_constraintTop_toBottomOf="@id/registerAge">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registerFavMovieEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/funnyImage"
-        android:src="@drawable/cine"
-        app:layout_constraintTop_toBottomOf="@id/sendData"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

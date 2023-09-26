@@ -17,15 +17,15 @@ import com.utn.primerparcial.movies.database.MovieDao
 
 class MovieListFragment : Fragment() {
 
-    lateinit var v : View
+
     companion object {
         fun newInstance() = MovieListFragment()
     }
 
+    lateinit var v : View
     private var moviedb : AppDatabase? = null
     private var MovieDao : MovieDao? = null
     private lateinit var rvMovies: RecyclerView
-    private lateinit var viewModel: MovieListViewModel
     private lateinit var addButton : Button
 
 

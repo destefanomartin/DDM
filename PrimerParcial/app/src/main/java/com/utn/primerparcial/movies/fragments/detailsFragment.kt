@@ -43,8 +43,6 @@ class detailsFragment : Fragment() {
 
     private val args: detailsFragmentArgs by navArgs()
 
-    private lateinit var viewModel: DetailsViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -106,7 +104,6 @@ class detailsFragment : Fragment() {
                 .setBackgroundTint(Color.BLACK)
                 .setTextColor(Color.WHITE)
                 .show()
-            requireActivity().onBackPressed()
         }
 
         deleteButton.setOnClickListener(){
@@ -120,10 +117,6 @@ class detailsFragment : Fragment() {
             requireActivity().onBackPressed()
         }
     }
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 }

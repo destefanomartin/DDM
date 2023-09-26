@@ -23,13 +23,11 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
         }
     }
 
-    /**
-     * Pre-populate database with hard-coded users
-     */
+
     private fun fillWithStartingUsers(context: Context) {
         val users = listOf(
-            User(1,"Martin Destefano", "martin@gmail.com", "2222", 23),
-            User(2,"Franco Torres", "franco@gmail.com", "2222", 18)
+            User(1,"Martin Destefano", "martin@gmail.com", "2222", 23, "The Godfather"),
+            User(2,"Franco Torres", "franco@gmail.com", "2222", 18, "Mamma Mia")
         )
         val dao = AppDatabase.getInstance(context)?.userDao()
 
@@ -38,9 +36,6 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
         }
     }
 
-    /**
-     * Pre-populate database with users from a Json file
-     */
     private fun fillWithStartingUsersFromJson(context: Context) {
         val dao = AppDatabase.getInstance(context)?.userDao()
 
@@ -53,7 +48,8 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
                     name = item.getString("name"),
                     email = item.getString("email"),
                     password = item.getString("password"),
-                    age = item.getInt("age")
+                    age = item.getInt("age"),
+                    favMovie = item.getString("favMovie")
                 )
 
                 dao?.insertUser(user)
@@ -63,9 +59,6 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
         }
     }
 
-    /**
-     * Utility to load a JSON array from the raw folder
-     */
     private fun loadJSONArray(context: Context, file: Int): JSONArray {
         val inputStream = context.resources.openRawResource(file)
 
