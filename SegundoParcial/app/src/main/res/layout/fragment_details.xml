@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.DetailsFragment">
+
+    <ImageView
+        android:id="@+id/posterLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/avatarexample"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movieNameFromApi"
+        android:textSize="20sp"
+        android:fontFamily="@font/inter_black"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/posterLogo"
+        app:layout_constraintTop_toBottomOf="@id/posterLogo"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/movieDirectorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movieDirector"
+        android:textSize="18sp"
+        android:fontFamily="@font/inter_black"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/posterLogo"
+        app:layout_constraintTop_toBottomOf="@id/movieName"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/movieDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movieDirectorFromApi"
+        app:layout_constraintStart_toStartOf="@id/movieDirectorMessage"
+        app:layout_constraintTop_toBottomOf="@id/movieDirectorMessage"
+        android:fontFamily="@font/inter_black"
+
+        />
+
+    <TextView
+        android:id="@+id/movieGenreMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movieGenre"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_black"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/posterLogo"
+        app:layout_constraintTop_toBottomOf="@id/movieDirector"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/movieGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movieGenreFromApi"
+        app:layout_constraintStart_toStartOf="@id/movieGenreMessage"
+        app:layout_constraintTop_toBottomOf="@id/movieGenreMessage"
+        android:fontFamily="@font/inter_black"
+        />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/movieDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movieDescriptionFromApi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieGenre"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/movieReleaseYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/movieDirector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/movieGenre"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

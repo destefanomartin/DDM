@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Mail">Correo electronico</string>
+    <string name="Login">Iniciar sesion</string>
+    <string name="NoAccount">"¿No tienes una cuenta? "</string>
+    <string name="Register">Registrate</string>
+    <string name="ConfirmPassword">Confirmar contraseña</string>
+    <string name="UserName">Nombre de usuario</string>
+    <string name="ageApproval">Acepto la Politica de Privacidad y los Terminos y Condicones de la aplicacion</string>
+    <string name="Age">Edad</string>
+    <string name="Country">Pais</string>
+    <string name="title">Cines cercanos</string>
+    <string name="supporting_text">Busca cines cercanos donde ver las ultimas peliculas en cartelera!</string>
+    <string name="Logout">Cerrar sesion</string>
+    <string name="movieDirector">Dirigida por</string>
+    <string name="movieGenre">Genero</string>
+    <string name="BottomBarMovie">Peliculas</string>
+    <string name="BottomBarProfile">Perfil</string>
+    <string name="movieNameFromApi">testing</string>
+    <string name="movieDirectorFromApi">testing</string>
+    <string name="movieGenreFromApi">testing</string>
+    <string name="movieDescriptionFromApi">testing</string>
+</resources>

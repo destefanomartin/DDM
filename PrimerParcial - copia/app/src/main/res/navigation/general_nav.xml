@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/general_nav"
+    app:startDestination="@id/movieListFragment">
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.utn.primerparcial.movies.fragments.detailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="movies"
+            app:argType="com.utn.primerparcial.movies.models.Movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.utn.primerparcial.login.fragments.userProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_main_navgraph"
+            app:destination="@id/main_navgraph" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieListFragment"
+        android:name="com.utn.primerparcial.movies.fragments.MovieListFragment"
+        android:label="fragment_movie_list"
+        tools:layout="@layout/fragment_movie_list" >
+        <action
+            android:id="@+id/action_movieListFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_movieListFragment_to_createMovieFragment"
+            app:destination="@id/createMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMovieFragment"
+        android:name="com.utn.primerparcial.movies.fragments.CreateMovieFragment"
+        android:label="fragment_create_movie"
+        tools:layout="@layout/fragment_create_movie" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.utn.primerparcial.SettingsActivity"
+        android:label="activity_settings"
+        tools:layout="@layout/activity_settings" />
+    <include app:graph="@navigation/main_navgraph" />
+</navigation>

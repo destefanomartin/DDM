@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movies.fragments.CreateMovieFragment">
+
+
+    <TextView
+        android:id="@+id/addFilmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addYourFilm"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addFilmTextView">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieTitleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieDirector"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/Director"
+        app:layout_constraintStart_toStartOf="@id/inputMovieTitle"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieTitle"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieTitle"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieDirectorEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieGenre"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/Genre"
+        app:layout_constraintStart_toStartOf="@id/inputMovieDirector"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieDirector"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieDirector"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieGenreEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieRating"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:hint="@string/Rating"
+        app:layout_constraintEnd_toStartOf="@+id/inputMovieYear"
+        app:layout_constraintStart_toStartOf="@id/inputMovieGenre"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieGenre">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieRatingEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieYear"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:hint="@string/Year"
+        app:layout_constraintStart_toEndOf="@id/inputMovieRating"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieGenre"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieGenre"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieYearEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMovieImageLink"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/UploadImage"
+        app:layout_constraintStart_toStartOf="@id/inputMovieRating"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieRating"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieYear"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMovieImageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/addFilm"
+        app:layout_constraintEnd_toEndOf="@id/inputMovieYear"
+        app:layout_constraintStart_toStartOf="@id/inputMovieRating"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputMovieRating" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

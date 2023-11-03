@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/movieListFragment2"
+        android:icon="@drawable/listimg"
+        android:title="@string/BottomBarMovie"/>
+
+    <item android:id="@+id/watchlistFragment"
+        android:icon="@drawable/watchlistlogo2"
+        android:title="@string/BottomBarWatchlist"/>
+    <item
+        android:id="@+id/userProfileFragment2"
+        android:icon="@drawable/profileimg"
+        android:title="@string/BottomBarProfile"/>
+
+</menu>

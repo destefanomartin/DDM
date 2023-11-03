@@ -29,6 +29,7 @@ class registerFragment : Fragment() {
     private lateinit var registerAge : TextInputEditText
     private lateinit var registerButton : Button
     private lateinit var favMovie : TextInputEditText
+    private lateinit var viewModel : RegisterViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,24 +52,25 @@ class registerFragment : Fragment() {
 
         registerButton.setOnClickListener {
             if(registerPassword.text.toString().isNotEmpty() && registerMail.text.toString().isNotEmpty() && registerName.text.toString().isNotEmpty() && registerAge.text.toString().isNotEmpty()){
-            AppDatabase.getInstance(requireContext())?.userDao()?.insertUser(
-                User(0,
-                    registerName.text.toString(),
-                    registerMail.text.toString(),
-                    registerPassword.text.toString(),
-                    registerAge.text.toString().toInt(),
-                    favMovie.text.toString()
-
-                )
-
-            )
+                viewModel.register(registerMail.toString(), registerPassword.toString())
             }else{
                 Snackbar.make(v, "Por favor, complete todos los campos", Snackbar.LENGTH_LONG).show()
             }
+            if(updateUI(viewModel.auth.currentUser)){
+                Snackbar.make(v, "Usuario registrado con exito", Snackbar.LENGTH_LONG).show()
             requireActivity().onBackPressed()
+
         }
 
     }
 
 
+
+    fun updateUI(user: User){
+        registerName.setText(user.name)
+        registerMail.setText(user.email)
+        registerPassword.setText(user.password)
+        registerAge.setText(user.age.toString())
+        favMovie.setText(user.favMovie)
+    }
 }

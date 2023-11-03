@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.fragments.userProfileFragment" >
+
+    <ImageView
+        android:id="@+id/blackgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/Email"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/userNameTextView"
+        app:layout_constraintStart_toStartOf="@id/userNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/blackgroundImage" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@id/labelEmail"
+        app:layout_constraintStart_toStartOf="@id/labelEmail"
+        app:layout_constraintTop_toBottomOf="@id/labelEmail" />
+
+    <TextView
+        android:id="@+id/labelAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/Age"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/labelEmail"
+        app:layout_constraintStart_toStartOf="@id/labelEmail"
+        app:layout_constraintTop_toBottomOf="@id/emailTextView" />
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/blackgroundImage"
+        app:layout_constraintEnd_toEndOf="@id/blackgroundImage"
+        app:layout_constraintStart_toStartOf="@id/blackgroundImage" />
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@id/labelAge"
+        app:layout_constraintStart_toStartOf="@id/labelAge"
+        app:layout_constraintTop_toBottomOf="@id/labelAge" />
+
+    <TextView
+        android:id="@+id/labelFavMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/FavMovie"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/labelAge"
+        app:layout_constraintStart_toStartOf="@id/labelAge"
+        app:layout_constraintTop_toBottomOf="@id/ageTextView" />
+
+    <TextView
+        android:id="@+id/favMovieTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@id/labelFavMovie"
+        app:layout_constraintStart_toStartOf="@id/labelFavMovie"
+        app:layout_constraintTop_toBottomOf="@id/labelFavMovie" />
+
+    <TextView
+        android:id="@+id/userIdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@id/userNameTextView"
+        app:layout_constraintStart_toStartOf="@id/userNameTextView"
+        app:layout_constraintBottom_toTopOf="@id/userNameTextView" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:backgroundTint="@color/black"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        app:icon="@drawable/logout"
+        app:iconTint="@color/white"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart  ="4dp"
+        android:layout_marginBottom="64dp"
+        app:srcCompat="@drawable/settings"
+        app:tint="@color/white"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

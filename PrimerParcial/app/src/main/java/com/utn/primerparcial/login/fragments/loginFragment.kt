@@ -56,20 +56,12 @@ class loginFragment : Fragment() {
         btnLogin = v.findViewById(R.id.btnLogin)
         btnRegister = v.findViewById(R.id.registerButton)
         imageLogo = v.findViewById(R.id.imageLogo)
-        AppDatabase.getInstance(v.context)!!.userDao()!!.fetchAllUsers()
-        val baseUsuarios = AppDatabase.getInstance(v.context)!!.userDao()!!.getAllUsers()
-
-
 
 
         btnRegister.setOnClickListener {
             val action = loginFragmentDirections.actionLoginFragmentToRegisterFragment()
             findNavController().navigate(action)
         }
-
-
-
-
 
 
         btnLogin.setOnClickListener {

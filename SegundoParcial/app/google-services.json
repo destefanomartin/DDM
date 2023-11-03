@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "99169928611",
+    "project_id": "movieappadvanced",
+    "storage_bucket": "movieappadvanced.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99169928611:android:0f104f8db5c3ce33144616",
+        "android_client_info": {
+          "package_name": "com.utn.segundoparcial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3tPFDB2RqimetH87H_KnDr0-g_9FbHn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
