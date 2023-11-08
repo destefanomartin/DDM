@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.utn.segundoparcial.domain.models.Movie
+import com.utn.segundoparcial.data.models.Movie
 import com.utn.segundoparcial.R
 
 class MoviesAdapter(private val list: MutableList<Movie>?, private val onItemClick: (Movie) -> Unit) : RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>() {
@@ -30,7 +30,7 @@ class MoviesAdapter(private val list: MutableList<Movie>?, private val onItemCli
 
     inner class MoviesViewHolder(private val v: View) : RecyclerView.ViewHolder(v) {
         fun bind(movie: Movie) {
-            val imgMoviePoster: ImageView = v.findViewById(R.id.movieImage)
+            val imgMoviePoster: ImageView = v.findViewById(R.id.movie_item)
             Log.d("URL", movie.posterPath)
             Glide.with(imgMoviePoster)
                 .load(movie.posterPath)

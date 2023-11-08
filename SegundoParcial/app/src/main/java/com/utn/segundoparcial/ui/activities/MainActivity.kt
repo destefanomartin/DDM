@@ -1,4 +1,4 @@
-package com.utn.segundoparcial.ui
+package com.utn.segundoparcial.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

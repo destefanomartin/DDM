@@ -3,6 +3,9 @@
     <style name="Base.Theme.SegundoParcial" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/black</item>
     </style>
-
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/orange</item>
+    </style>
     <style name="Theme.SegundoParcial" parent="Base.Theme.SegundoParcial" />
 </resources>

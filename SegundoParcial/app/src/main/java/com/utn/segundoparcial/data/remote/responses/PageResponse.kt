@@ -1,7 +1,6 @@
-package com.utn.segundoparcial
+package com.utn.segundoparcial.data.remote.responses
 
 import com.google.gson.annotations.SerializedName
-import com.utn.segundoparcial.domain.models.Movie
 
 data class PageResponse(
     @SerializedName("page") val page: Int,

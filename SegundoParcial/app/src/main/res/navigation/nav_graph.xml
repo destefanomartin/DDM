@@ -21,10 +21,14 @@
         android:id="@+id/registerFragment"
         android:name="com.utn.segundoparcial.ui.fragments.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <activity
         android:id="@+id/navigationActivity"
-        android:name="com.utn.segundoparcial.ui.NavigationActivity"
+        android:name="com.utn.segundoparcial.ui.activities.NavigationActivity"
         android:label="activity_navigation"
         tools:layout="@layout/activity_navigation" />
 </navigation>

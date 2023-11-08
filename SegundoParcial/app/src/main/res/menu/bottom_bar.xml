@@ -6,7 +6,7 @@
         android:icon="@drawable/listimg"
         android:title="@string/BottomBarMovie"/>
 
-    <item android:id="@+id/watchlistFragment"
+    <item android:id="@+id/watchlistFragment2"
         android:icon="@drawable/watchlistlogo2"
         android:title="@string/BottomBarWatchlist"/>
     <item

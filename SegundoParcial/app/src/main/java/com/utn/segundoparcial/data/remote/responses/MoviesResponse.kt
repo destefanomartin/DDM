@@ -1,4 +1,4 @@
-package com.utn.segundoparcial
+package com.utn.segundoparcial.data.remote.responses
 
 import com.google.gson.annotations.SerializedName
 

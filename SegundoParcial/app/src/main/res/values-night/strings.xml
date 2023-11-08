@@ -20,4 +20,5 @@
     <string name="movieDirectorFromApi">testing</string>
     <string name="movieGenreFromApi">testing</string>
     <string name="movieDescriptionFromApi">testing</string>
+    <string name="ratingMessage">Calificaciones de los usuarios\n</string>
 </resources>

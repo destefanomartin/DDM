@@ -1,7 +1,4 @@
-package com.utn.segundoparcial.domain.models
-
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+package com.utn.segundoparcial.data.models
 
 class Movie(
     val adult: Boolean,

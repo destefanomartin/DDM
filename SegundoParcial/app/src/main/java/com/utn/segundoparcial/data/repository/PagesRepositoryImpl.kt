@@ -1,21 +1,19 @@
-package com.utn.segundoparcial.domain.repository
+package com.utn.segundoparcial.data.repository
 
 import android.util.Log
-import com.utn.segundoparcial.APIService
-import com.utn.segundoparcial.MoviesResponse
-import com.utn.segundoparcial.PageResponse
+import com.utn.segundoparcial.data.remote.APIService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.utn.segundoparcial.domain.models.Movie
-import com.utn.segundoparcial.domain.models.Page
-import com.utn.segundoparcial.toDomain
-import com.utn.segundoparcial.toMovie
-import com.utn.segundoparcial.toPage
+import com.utn.segundoparcial.data.models.Movie
+import com.utn.segundoparcial.data.models.MovieDetails
+import com.utn.segundoparcial.data.models.toDomain
+import com.utn.segundoparcial.data.remote.toResults
 
 
 class PagesRepositoryImpl : PagesRepository {
+
 
 
     companion object {
@@ -40,28 +38,20 @@ class PagesRepositoryImpl : PagesRepository {
         return@lazy retrofit.create(APIService::class.java)
     }
 
-    override suspend fun getPage(page: Int): MutableList<Movie>? {
+    override suspend fun getPage(page: Int): MutableList<Movie> {
         return try {
             val response = apiClient.getPage(page)
-            if (response.isSuccessful) {
-                response?.body()?.results?.map { it.toDomain() }?.toMutableList()
-            } else {
-                null
-            }
+            response.body()?.results?.map { it.toResults() }!!.toMutableList()
         } catch (e: Exception) {
             Log.d(TAG, "Exception caught: $e")
-            null
+            mutableListOf()
         }
     }
 
-    override suspend fun getMoviesById(id: Int): Movie? {
+    override suspend fun getMoviesById(id: Int): MovieDetails? {
         return try {
             val response = apiClient.getMovieById(id)
-            if (response.isSuccessful) {
-                response.body()?.toMovie()
-            } else {
-                null
-            }
+            response.body()?.toDomain()
         } catch (e: Exception) {
             Log.d(TAG, "Exception caught: $e")
             null

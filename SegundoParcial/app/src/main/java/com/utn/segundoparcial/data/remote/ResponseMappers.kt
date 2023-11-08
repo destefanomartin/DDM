@@ -1,8 +1,10 @@
-package com.utn.segundoparcial
+package com.utn.segundoparcial.data.remote
 
-import com.utn.segundoparcial.domain.models.Genre
-import com.utn.segundoparcial.domain.models.Movie
-import com.utn.segundoparcial.domain.models.Page
+import com.utn.segundoparcial.data.models.Movie
+import com.utn.segundoparcial.data.models.Page
+import com.utn.segundoparcial.data.remote.responses.MoviesResponse
+import com.utn.segundoparcial.data.remote.responses.PageResponse
+import com.utn.segundoparcial.data.remote.responses.ResultApi
 
 fun PageResponse.toPage(): Page = Page(
     page = page,
@@ -26,11 +28,10 @@ fun MoviesResponse.toMovie(): Movie = Movie(
     voteCount = voteCount
 )
 
-fun GenreResponse.toGenre(): Genre = Genre(
-    genres = genres
-)
 
-fun ResultApi.toDomain(): Movie  {
+fun ResultApi.toResults(): Movie {
     val poster = "${"https://image.tmdb.org/t/p/w500"}${this.posterPath}"
     return Movie(adult, backdropPath, genres, id, language, title, overview, popularity, poster, releaseDate, voteAverage, voteCount)
 }
+
+

@@ -1,4 +1,4 @@
-package com.utn.segundoparcial.domain.models
+package com.utn.segundoparcial.data.models
 
 data class Genre(
     val genres : MutableList<Int>

@@ -11,7 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
-import com.utn.segundoparcial.AuthResult
+import com.utn.segundoparcial.data.models.AuthResult
 import com.utn.segundoparcial.R
 import com.utn.segundoparcial.ui.viewmodels.LoginViewModel
 
@@ -57,21 +57,21 @@ class LoginFragment : Fragment() {
 
 
         btnLogin.setOnClickListener {
-            val email = "pepe@gmail.com"//inputMail.text.toString()
+            val email = "Pepe@gmail.com"//inputMail.text.toString()
             val password = "ochoocho"//inputPassword.text.toString()
             viewModel.signIn(email, password)
         }
-        viewModel._signInResult.observe(viewLifecycleOwner) { authResult ->
+        viewModel.signInResult.observe(viewLifecycleOwner) { authResult ->
             when (authResult) {
                 is AuthResult.Success -> {
-                    Snackbar.make(v, "Parece que anduvo jeje", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(v, "Inicio de sesion exitoso", Snackbar.LENGTH_SHORT)
                         .show()
                     val action = LoginFragmentDirections.actionLoginFragmentToNavigationActivity()
                     findNavController().navigate(action)
                 }
                 is AuthResult.Error -> {
-                    // Maneja errores de inicio de sesión en la interfaz
-                }
+                    Snackbar.make(v, "Fallo el inicio de sesion, si no tiene una cuenta se puede registrar con el boton 'Registrarse' en la parte inferior", Snackbar.LENGTH_SHORT)
+                        .show()                }
             }
         }
         btnRegister.setOnClickListener(){

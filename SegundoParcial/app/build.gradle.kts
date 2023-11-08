@@ -4,11 +4,15 @@ plugins {
     id("com.google.gms.google-services")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.utn.segundoparcial"
     compileSdk = 34
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.utn.segundoparcial"
@@ -62,5 +66,6 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.facebook.shimmer:shimmer:0.5.0@aar")
 
 }

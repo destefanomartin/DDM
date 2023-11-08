@@ -18,10 +18,28 @@
         android:id="@+id/detailsFragment"
         android:name="com.utn.segundoparcial.ui.fragments.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/userProfileFragment2"
         android:name="com.utn.segundoparcial.ui.fragments.UserProfileFragment"
         android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" />
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment2_to_nav_graph"
+            app:destination="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchlistFragment2"
+        android:name="com.utn.segundoparcial.ui.fragments.WatchlistFragment"
+        android:label="fragment_watchlist"
+        tools:layout="@layout/fragment_watchlist" >
+        <action
+            android:id="@+id/action_watchlistFragment2_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <include app:graph="@navigation/nav_graph" />
 </navigation>

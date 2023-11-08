@@ -1,4 +1,4 @@
-package com.utn.segundoparcial
+package com.utn.segundoparcial.data.models
 
 sealed class AuthResult{
     data class Success(val message: String) : AuthResult()
