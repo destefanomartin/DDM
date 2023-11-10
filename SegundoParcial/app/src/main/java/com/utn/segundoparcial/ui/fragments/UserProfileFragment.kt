@@ -56,13 +56,8 @@ class UserProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val currentUser = FirebaseAuth.getInstance().currentUser
-
-        // Verifica si el usuario está autenticado
-        if (currentUser != null) {
-            userProfileViewModel.getUserData(currentUser.uid)
-            userProfileViewModel.user.observe(viewLifecycleOwner) { user ->
-                // Actualiza la vista con los datos del usuario
+        userProfileViewModel.getUserData()
+        userProfileViewModel.user.observe(viewLifecycleOwner) { user ->
                 if (user != null) {
                     name.text = user.name
                     email.text = user.email
@@ -71,10 +66,15 @@ class UserProfileFragment : Fragment() {
                     Log.d("TAG", "No such document")
                 }
             }
-        }
+
         signOutButton.setOnClickListener(){
             userProfileViewModel.signOut()
             val action = UserProfileFragmentDirections.actionUserProfileFragment2ToNavGraph()
+            findNavController().navigate(action)
+        }
+
+        card.setOnClickListener(){
+            val action = UserProfileFragmentDirections.actionUserProfileFragment2ToLocationFragment()
             findNavController().navigate(action)
         }
     }

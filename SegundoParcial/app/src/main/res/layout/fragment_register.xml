@@ -65,7 +65,7 @@
         android:id="@+id/inputCountry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/Age"
+        android:hint="@string/Country"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputRepPassword"
@@ -130,8 +130,6 @@
         app:layout_constraintTop_toBottomOf="@id/inputUserName"
         app:layout_constraintBottom_toTopOf="@id/registerButton"
         android:textSize="12sp"
-        app:thumbTint = "@color/white"
-        app:trackTint = "@color/gray"
         android:text="@string/ageApproval"/>
 
 

@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.utn.segundoparcial.data.models.AuthResult
 import com.utn.segundoparcial.data.remote.FirebaseDataSource
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
@@ -23,9 +22,10 @@ class RegisterViewModel : ViewModel() {
             return
         }
 
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             try {
                 auth.createUserWithEmailAndPassword(email, password).await()
+                auth.currentUser?.sendEmailVerification()?.await()
                 auth.currentUser?.uid?.let { FirebaseDataSource().addUser(it, name, email, country) }
                 _signUpResult.postValue(AuthResult.Success("Registro exitoso"))
             } catch (e: Exception) {

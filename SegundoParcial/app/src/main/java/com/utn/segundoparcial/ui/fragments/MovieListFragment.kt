@@ -46,8 +46,8 @@ class MovieListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         rvMovies = binding.rvMovies
-        movieListViewModel.moviesList.observe(viewLifecycleOwner) {
-                val moviesAdapter = MoviesAdapter(movieListViewModel.moviesList.value)
+        movieListViewModel.moviesList.observe(viewLifecycleOwner) { movies ->
+                val moviesAdapter = MoviesAdapter(movies)
                 { movie ->
                     val action = MovieListFragmentDirections.actionMovieListFragment2ToDetailsFragment(movie.movieId)
                     findNavController().navigate(action)

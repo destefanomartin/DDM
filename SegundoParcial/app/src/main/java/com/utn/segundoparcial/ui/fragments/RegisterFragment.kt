@@ -1,5 +1,7 @@
 package com.utn.segundoparcial.ui.fragments
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -53,7 +55,6 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
 
 

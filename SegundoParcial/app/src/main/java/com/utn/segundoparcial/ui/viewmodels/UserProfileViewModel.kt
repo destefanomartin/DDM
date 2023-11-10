@@ -22,11 +22,11 @@ class UserProfileViewModel : ViewModel() {
     private val _user = MutableLiveData<User?>()
     val user: LiveData<User?> get() = _user
 
-    fun getUserData(uid: String) {
+    fun getUserData() {
         viewModelScope.launch {
             try {
                 val documentSnapshot = withContext(Dispatchers.IO) {
-                    db.collection("Users").document(uid).get().await()
+                    db.collection("Users").document(currentUser!!.uid).get().await()
                 }
                 val userData = documentSnapshot.toObject<User>()
                 _user.postValue(userData)

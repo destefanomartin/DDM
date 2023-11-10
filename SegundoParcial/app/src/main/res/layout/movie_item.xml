@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="250dp"
-    app:cardElevation="@dimen/space_small"
+    app:cardElevation="8dp"
     app:cardCornerRadius="@dimen/space_small"
     android:layout_margin="@dimen/space_small_super">
 

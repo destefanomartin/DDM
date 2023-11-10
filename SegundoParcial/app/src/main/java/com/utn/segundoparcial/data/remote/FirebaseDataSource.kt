@@ -4,6 +4,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.utn.segundoparcial.data.models.Cinema
 import com.utn.segundoparcial.data.models.MovieDetails
 import com.utn.segundoparcial.data.models.User
 import kotlinx.coroutines.tasks.await
@@ -12,7 +13,7 @@ class FirebaseDataSource {
 
     val db = Firebase.firestore
 
-    suspend fun addUser(uid: String, name: String, email: String, country : String){
+    suspend fun addUser(uid: String, name: String, email: String, country: String){
         val user = hashMapOf(
             "name" to name,
             "email" to email,
@@ -54,5 +55,11 @@ class FirebaseDataSource {
             }
         }
         return false
+    }
+
+
+    suspend fun getCinemas(): MutableList<Cinema> {
+        val cinemas = db.collection("Cines").get().await()
+        return cinemas.toObjects(Cinema::class.java)
     }
 }

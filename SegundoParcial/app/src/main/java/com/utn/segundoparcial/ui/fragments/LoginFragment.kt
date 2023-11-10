@@ -55,12 +55,16 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-        btnLogin.setOnClickListener {
-            val email = "Pepe@gmail.com"//inputMail.text.toString()
-            val password = "ochoocho"//inputPassword.text.toString()
-            viewModel.signIn(email, password)
+        btnLogin.setOnClickListener(){
+            if(inputMail.text.toString().isEmpty() || inputPassword.text.toString().isEmpty()){
+                Snackbar.make(v, "Por favor complete todos los campos", Snackbar.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
+            else
+                viewModel.signIn(inputMail.text.toString(), inputPassword.text.toString())
         }
+
         viewModel.signInResult.observe(viewLifecycleOwner) { authResult ->
             when (authResult) {
                 is AuthResult.Success -> {
@@ -70,8 +74,22 @@ class LoginFragment : Fragment() {
                     findNavController().navigate(action)
                 }
                 is AuthResult.Error -> {
-                    Snackbar.make(v, "Fallo el inicio de sesion, si no tiene una cuenta se puede registrar con el boton 'Registrarse' en la parte inferior", Snackbar.LENGTH_SHORT)
-                        .show()                }
+                    val errorMessage = authResult.message
+                    when {
+                        errorMessage.contains("Usuario no registrado") -> {
+                            Snackbar.make(v, errorMessage, Snackbar.LENGTH_SHORT).show()
+                        }
+                        errorMessage.contains("Credenciales no válidas") -> {
+                            Snackbar.make(v, errorMessage, Snackbar.LENGTH_SHORT).show()
+                        }
+                        errorMessage.contains("Verifica tu correo electrónico") -> {
+                            Snackbar.make(v, errorMessage, Snackbar.LENGTH_SHORT).show()
+                        }
+                        else -> {
+                            Snackbar.make(v, errorMessage, Snackbar.LENGTH_SHORT).show()
+                        }
+                    }
+                }
             }
         }
         btnRegister.setOnClickListener(){

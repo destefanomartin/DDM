@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_userProfileFragment2_to_nav_graph"
             app:destination="@id/nav_graph" />
+        <action
+            android:id="@+id/action_userProfileFragment2_to_locationFragment"
+            app:destination="@id/locationFragment" />
     </fragment>
     <fragment
         android:id="@+id/watchlistFragment2"
@@ -42,4 +45,9 @@
             app:destination="@id/detailsFragment" />
     </fragment>
     <include app:graph="@navigation/nav_graph" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.utn.segundoparcial.ui.fragments.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
 </navigation>
